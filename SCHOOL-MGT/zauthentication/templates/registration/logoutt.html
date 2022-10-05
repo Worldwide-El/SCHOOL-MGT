@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Access To This Page Denied!</h5>
+{% else %}
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Are You Sure You Want To Log Out?</h5>
+                        <a href="{% url 'logout' %}"><button class="btn btn-mute btn-block border-0 py-3" type="submit">Yes, Logout</button></a>
+                        <a href="{% url 'index' %}"><button class="btn btn-dark btn-block border-0 py-3" type="submit">No, Not Yet</button></a>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}                

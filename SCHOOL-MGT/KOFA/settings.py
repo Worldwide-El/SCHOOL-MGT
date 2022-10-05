@@ -42,9 +42,13 @@ INSTALLED_APPS = [
 
     'users', # Custom AbstractUser App
     'master', #Main App
+    'zauthentication', # App for Authentication stuff
+    'crispy_forms', # For styling the django-form
 ]
 
-AUTH_USER_MODEL = 'users.CustomUser'
+CRISPY_TEMPLATE_PACK = 'bootstrap4' # Added because of the installing of crispy-forms
+
+AUTH_USER_MODEL = 'users.CustomUser' # Added because of the AbstractUser Model
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,3 +136,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('master.urls')),
+    path('zauth/', include('django.contrib.auth.urls')),
+    path('zauth/', include('zauthentication.urls'))
 ]

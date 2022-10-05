@@ -8,6 +8,8 @@ asgiref==3.5.2
     # via django
 django==4.1.1
     # via -r requirements.in
+django-crispy-forms==1.14.0
+    # via -r requirements.in
 python-decouple==3.6
     # via -r requirements.in
 sqlparse==0.4.3
