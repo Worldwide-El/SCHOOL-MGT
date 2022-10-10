@@ -3,6 +3,15 @@
 {% load crispy_forms_tags%}
 
 
+{% if messages %}
+    {% for message in messages  %}
+        <div class='alert alert-{{ message.tags }}'>
+            {{message}}
+        </div
+    {% endfor %}
+{% endif %}
+
+
 {% if user.is_authenticated %}
     <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Access To This Page Denied!</h5>
 {% else %}
@@ -12,6 +21,8 @@
             {{form|crispy}}
             <button class="btn btn-dark btn-block border-0 py-3" type="submit">Login Now</button>
         <form>
+            <br><hr>
+            <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="{% url 'signup' %}">Create Account</a> 
     </div>
 
     <!-- Advert Start -->
